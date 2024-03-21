@@ -7,13 +7,16 @@ import com.polytech.Thes.The;
 public class Main {
     public static void main(String[] args) {
         try {
-            The the = new The("test", Categorie.AROMATISE, "test", 75, 9.6F);
-            The the2 = new The("test", Categorie.AROMATISE, "test", 75, 9.2F);
-            System.out.println(the);
-            StockDeThes stock = new StockDeThes();
-            stock.ajouter(the, 20);
-            stock.ajouter(the2, 20);
-            System.out.println(stock.quantiteDesThesDontLaNoteEstSupOuEgaleA(9.5));
+            StockDeThes placardCuisine = new StockDeThes();
+            The the1 = new The("thé1", Categorie.VERT, "Chine", 80, 8F);
+            The the2 = new The("thé2", Categorie.NOIR, "Inde", 95, 6.5F);
+            placardCuisine.ajouter(the1, 50);
+            placardCuisine.ajouter(the2, 60);
+            placardCuisine.sortir(the1, 40);
+            placardCuisine.sortir(the2, 60);
+            System.out.println(placardCuisine.thes());
+            placardCuisine.sortir(the1, 20);
+            System.out.println(placardCuisine.thes());
         } catch (Exception e) {
             System.out.println(e);
         }

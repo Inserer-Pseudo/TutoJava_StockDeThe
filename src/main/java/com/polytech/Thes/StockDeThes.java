@@ -55,6 +55,14 @@ public class StockDeThes extends HashMap<The, Integer> {
         return set;
     }
 
+    public String thes() {
+        StringBuilder builder = new StringBuilder();
+        for (The the : this.keySet()) {
+            builder.append(the.getNom()).append(", quantite : ").append(this.getQuantite(the)).append("\n");
+        }
+        return builder.toString();
+    }
+
     public int quantiteDesThesDontLaNoteEstSupOuEgaleA(double seuilNote) { // Un super choix de nom de la methode
         int quantite = 0;
         for (The the : this.keySet()) {
